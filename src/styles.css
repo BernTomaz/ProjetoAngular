@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+.main-containter {
+  padding-top: 100px;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+}
+
+footer {
+ height: 50px;
+ text-align: center;
+ 
+}
+
+.bg-angular {
+  background: linear-gradient(135deg, #1a1a1a, #6a008a, #ff004c);
+  color: white;
+}
