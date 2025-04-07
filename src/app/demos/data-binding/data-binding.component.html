@@ -1,0 +1,52 @@
+<div class="container mt-5 pt-5">
+    <h1>Data Binding</h1>
+    <p>Data binding é uma técnica que permite a sincronização entre o modelo e a visão.</p>
+    <p>O Angular oferece quatro tipos principais de data binding:</p>
+  
+    <ul>
+      <br>
+      <li>
+        <strong>Interpolation</strong>: Usado para exibir dados do componente na visão.<br>
+        <p>O número de cliques é: {{ contadorClique }}</p>
+      </li>
+  
+      <br>
+      <li>
+        <strong>Property Binding</strong>: Usado para definir propriedades de elementos HTML.<br><br>
+        <button class="btn btn-info" [disabled]="contadorClique >= 10">INFO</button><br><br>
+        <img [src]="urlImagem" height="50px" width="50px"><br>
+      </li>
+  
+      <br>
+      <li>
+        <strong>Event Binding</strong>: Usado para capturar eventos do usuário.<br><br>
+        <button class="btn btn-warning" (click)="adicionarClique()">Clique aqui</button>
+        <button class="btn btn-danger" (click)="Zerarcontador()" [disabled]="contadorClique < 10">Zerar contador</button>
+      </li>
+  
+      <br>
+      <li>
+        <strong>Two-Way Data Binding</strong>: Permite a comunicação bidirecional entre o modelo (TS) e a visão (HTML).<br><br>
+        <p>Exemplo: você pode editar o nome abaixo, e ele será atualizado em tempo real:</p>
+        
+        <!-- <input type="text" (keyup)='keyUp($event)' placeholder="Digite seu nome aqui"><br>
+        <br>
+        <br>
+        <p>Nome: {{ nome }}</p>
+        <br>
+        <br>
+        <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event" placeholder="Digite seu nome" ><br>
+        <br>
+        <br>
+        <p>Nome: {{ nome }}</p> -->
+
+        <input type="text" [(ngModel)]="nome"  placeholder="Digite seu nome" ><br>
+        <br>
+        <br>
+        <label [ngClass]="nome"> Seu nome é: {{nome}}</label> 
+
+      </li>
+    </ul>
+  </div>
+  
+  
