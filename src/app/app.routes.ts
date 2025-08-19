@@ -5,7 +5,7 @@ import { SobreComponent } from './institucional/sobre/sobre.component'; // ✅ I
 import { DataBindingComponent } from './demos/data-binding/data-binding.component'; // ✅ Importa o componente de data binding
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' }, // ✅ Redireciona a raiz ('/') para '/home'
+    { path: '', component: HomeComponent }, // ✅ Quando o usuário acessar a raiz ('/'), o HomeComponent será carregado no <router-outlet>
     { path: 'home', component: HomeComponent }, // ✅ Quando o usuário acessar '/home', o HomeComponent será carregado no <router-outlet>
     { path: 'contato', component: ContatoComponent }, // ✅ Quando acessar '/contato', carrega ContatoComponent
     { path: 'sobre', component: SobreComponent }, // ✅ Quando acessar '/sobre', carrega SobreComponent
