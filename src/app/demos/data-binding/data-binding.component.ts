@@ -26,7 +26,7 @@ export class DataBindingComponent {
     this.contadorClique++;     
   }
 
-  Zerarcontador() {
+  zerarContador() {
     this.contadorClique = 0;
   }
 
