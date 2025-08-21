@@ -31,6 +31,35 @@
       "promocao": false,
       "valorPromo": 0,
       "imagem": "notebook.jpg"
+    },
+    {
+      "id": 5,
+      "nome": "Teclado Mecânico Redragon",
+      "valor": 250.00,
+      "promocao": true,
+      "valorPromo": 199.90,
+      "imagem": "teclado.jpg"
+    },
+    {
+      "id": 6,
+      "nome": "Monitor LG 24'' Full HD",
+      "valor": 899.00,
+      "promocao": false,
+      "valorPromo": 0,
+      "imagem": "monitor.jpg"
+    },
+    {
+      "id": 7,
+      "nome": "Cadeira Gamer ThunderX3",
+      "valor": 1350.00,
+      "promocao": true,
+      "valorPromo": 1150.00,
+      "imagem": "cadeira.jpg"
     }
+  ],
+  "posts": [
+    { "id": "1", "title": "a title", "views": 100 },
+    { "id": "2", "title": "another title", "views": 200 }
   ]
 }
+
