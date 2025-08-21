@@ -9,5 +9,6 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent }, // ✅ Quando o usuário acessar '/home', o HomeComponent será carregado no <router-outlet>
     { path: 'contato', component: ContatoComponent }, // ✅ Quando acessar '/contato', carrega ContatoComponent
     { path: 'sobre', component: SobreComponent }, // ✅ Quando acessar '/sobre', carrega SobreComponent
-    { path: 'data-binding', component: DataBindingComponent } // ✅ Quando acessar '/data-binding', carrega DataBindingComponent
+    { path: 'data-binding', component: DataBindingComponent }, // ✅ Quando acessar '/data-binding', carrega DataBindingComponent
+    // { path: 'produtos', component: ProdutosComponent } // ✅ Quando acessar '/produtos', carrega ProdutosComponent
 ];
