@@ -3,6 +3,7 @@ import { HomeComponent } from './navegacao/home/home.component'; // ✅ Importa 
 import { ContatoComponent } from './institucional/contato/contato.component'; // ✅ Importa a página de contato
 import { SobreComponent } from './institucional/sobre/sobre.component'; // ✅ Importa a página sobre
 import { DataBindingComponent } from './demos/data-binding/data-binding.component'; // ✅ Importa o componente de data binding
+import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component'; // ✅ Importa o componente de lista de produtos
 
 export const routes: Routes = [
     { path: '', component: HomeComponent }, // ✅ Quando o usuário acessar a raiz ('/'), o HomeComponent será carregado no <router-outlet>
@@ -10,5 +11,5 @@ export const routes: Routes = [
     { path: 'contato', component: ContatoComponent }, // ✅ Quando acessar '/contato', carrega ContatoComponent
     { path: 'sobre', component: SobreComponent }, // ✅ Quando acessar '/sobre', carrega SobreComponent
     { path: 'data-binding', component: DataBindingComponent }, // ✅ Quando acessar '/data-binding', carrega DataBindingComponent
-    // { path: 'produtos', component: ProdutosComponent } // ✅ Quando acessar '/produtos', carrega ProdutosComponent
+    { path: 'produtos', component: ListaProdutoComponent }, // ✅ Quando acessar '/produtos', carrega ListaProdutoComponent
 ];

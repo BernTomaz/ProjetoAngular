@@ -1,18 +1,16 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { Produto }  from "./produto";    
-import { Observable } from "rxjs";  
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Produto } from './produto';
 
-@Injectable()
+// produtos.service.ts
+@Injectable({ providedIn: 'root' })
 export class ProdutosService {
+  private readonly url = '/api/produtos'; // <— mudou
 
-constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-    protected urlService: string = 'https://localhost:3000/';
-
-    obterProdutos() : Observable<Produto[]> {
-
-       return this.http.get<Produto[]>(this.urlService + "produtos");
-
-    }
+  obterProdutos(): Observable<Produto[]> {
+    return this.http.get<Produto[]>(this.url);
+  }
 }
