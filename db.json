@@ -2,7 +2,7 @@
   "produtos": [
     {
       "id": 1,
-      "nome": "Headset Logitech",
+      "nome": "Headset ",
       "valor": 120.00,
       "promocao": true,
       "valorPromo": 99.90,
@@ -10,7 +10,7 @@
     },
     {
       "id": 2,
-      "nome": "Webcam HD",
+      "nome": "Webcam ",
       "valor": 85.00,
       "promocao": false,
       "valorPromo": 0,
@@ -18,7 +18,7 @@
     },
     {
       "id": 3,
-      "nome": "Mousepad Gamer",
+      "nome": "Mousepad ",
       "valor": 45.00,
       "promocao": true,
       "valorPromo": 35.00,
@@ -26,7 +26,7 @@
     },
     {
       "id": 4,
-      "nome": "Notebook Dell",
+      "nome": "Notebook ",
       "valor": 3200.00,
       "promocao": false,
       "valorPromo": 0,
@@ -34,7 +34,7 @@
     },
     {
       "id": 5,
-      "nome": "Teclado Mecânico Redragon",
+      "nome": "Teclado  ",
       "valor": 250.00,
       "promocao": true,
       "valorPromo": 199.90,
@@ -42,7 +42,7 @@
     },
     {
       "id": 6,
-      "nome": "Monitor LG 24'' Full HD",
+      "nome": "Monitor ",
       "valor": 899.00,
       "promocao": false,
       "valorPromo": 0,
@@ -50,7 +50,7 @@
     },
     {
       "id": 7,
-      "nome": "Cadeira Gamer ThunderX3",
+      "nome": "Cadeira Gamer ",
       "valor": 1350.00,
       "promocao": true,
       "valorPromo": 1150.00,

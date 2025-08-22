@@ -1,30 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { Produto } from '../produto';
+import { CommonModule } from '@angular/common';       
 import { ProdutosService } from '../produtos.service';
-import { CommonModule } from '@angular/common';
+import { Produto } from '../produto';
 
 @Component({
   selector: 'app-lista-produto',
-  standalone: true,
+  standalone: true,                                     // ✅ standalone
+  imports: [CommonModule],                              // ✅ habilita *ngFor e currency
   templateUrl: './lista-produto.component.html',
-  imports: [CommonModule]
 })
 export class ListaProdutoComponent implements OnInit {
-  public produtos: Produto[] = [];
+  produtos: Produto[] = [];
 
-  constructor(private produtosService: ProdutosService) {}
+  constructor(private produtosSrv: ProdutosService) {}
 
   ngOnInit(): void {
-    this.produtosService.obterProdutos().subscribe({
-      next: (produtos) => (this.produtos = produtos),
-      error: (err) => console.log(err),
-      complete: () => console.log('Requisição concluída')
-    });
+    this.produtosSrv.listar().subscribe((data) => (this.produtos = data));
   }
 
-  // trackBy para o *ngFor
-  trackById(index: number, p: Produto): string {
-    return p.id; // use um identificador único
-  }
+  trackById = (_: number, p: Produto) => p.id;
 }
-

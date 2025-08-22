@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Produto } from './produto';
+import { Produto } from './produto';   // ✅ importa do produto.ts
 
-// produtos.service.ts
 @Injectable({ providedIn: 'root' })
 export class ProdutosService {
-  private readonly url = '/api/produtos'; // <— mudou
+  private apiUrl = '/api/produtos'; // via proxy vai para json-server
 
   constructor(private http: HttpClient) {}
 
-  obterProdutos(): Observable<Produto[]> {
-    return this.http.get<Produto[]>(this.url);
+  listar(): Observable<Produto[]> {
+    return this.http.get<Produto[]>(this.apiUrl);
   }
 }
+

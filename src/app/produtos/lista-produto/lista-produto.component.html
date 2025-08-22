@@ -1,20 +1,40 @@
 <div class="container main-container">
   <div class="row justify-content-start">
-    <div *ngFor="let produto of produtos; trackBy: trackById" class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3">
+    <div
+      *ngFor="let produto of produtos; trackBy: trackById"
+      class="col-12 col-sm-8 col-md-6 col-lg-4 mb-3"
+    >
       <div class="card h-100 shadow-sm border-0">
-        <img [src]="produto.imagem" class="card-img-top" [alt]="produto.nome">
+        
+        <!-- Imagem do produto -->
+        <img
+          [src]="'assets/produtos/' + produto.imagem"
+          class="card-img-top img-fluid"
+          [alt]="produto.nome"
+          style="max-height: 180px; object-fit: contain;"
+        />
+
         <div class="card-body text-center">
+          <!-- Nome -->
           <h4 class="card-title mb-2">{{ produto.nome }}</h4>
+
+          <!-- Texto fixo -->
           <small class="text-muted d-block mb-2">Por apenas:</small>
+
+          <!-- Preço normal ou promocional -->
           <h4 class="fw-bold mb-0">
             {{ (produto.promocao ? produto.valorPromo : produto.valor) | currency:'BRL':'symbol':'1.0-0' }}
           </h4>
         </div>
+
+        <!-- Botão -->
         <div class="card-footer bg-light border-0 text-center">
           <button class="btn btn-primary">
-            <span class="fa fa-shopping-cart me-1"></span> Comprar
+            <span class="fa fa-shopping-cart me-1"></span>
+            Comprar
           </button>
         </div>
+
       </div>
     </div>
   </div>
