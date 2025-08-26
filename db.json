@@ -2,7 +2,7 @@
   "produtos": [
     {
       "id": 1,
-      "nome": "Headset ",
+      "nome": "headset ",
       "valor": 120.00,
       "promocao": true,
       "valorPromo": 99.90,

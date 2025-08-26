@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';       
 import { ProdutosService } from '../produtos.service';
 import { Produto } from '../produto';
+import { registerLocaleData } from '@angular/common';
+
+import localePt from '@angular/common/locales/pt';
+registerLocaleData(localePt);
 
 @Component({
   selector: 'app-lista-produto',
