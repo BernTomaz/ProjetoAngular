@@ -14,18 +14,37 @@
           style="max-height: 180px; object-fit: contain;"
         />
 
-        <div class="card-body text-center">
+        <div  class="card-body text-center">
           <!-- Nome -->
           <h4 class="card-title mb-2">{{ produto.nome | titlecase}}</h4>
 
           <!-- Texto fixo -->
-          <small class="text-muted d-block mb-2">Por apenas:</small>
+        
+          <div [ngSwitch]="produto.promocao">
+            <p *ngSwitchCase="true">Em promoção!</p>
+            <p *ngSwitchCase="false">Por apenas:</p>
+          </div>
 
+           <div *ngIf="produto.promocao">
           <!-- Preço normal ou promocional -->
           <h4 class="fw-bold mb-0">
-            {{ (produto.promocao ? produto.valorPromo : produto.valor) | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+            <small><del> {{ produto.valor | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</del></small>
+            Por: {{ produto.valorPromo  | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+          </h4>
+        </div> 
+
+
+          <div *ngIf="!produto.promocao">
+          <!-- Preço normal ou promocional -->
+          <h4 class="fw-bold mb-0">
+            {{  produto.valor | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
           </h4>
         </div>
+
+
+       
+
+         </div>
 
         <!-- Botão -->
         <div class="card-footer bg-light border-0 text-center">
