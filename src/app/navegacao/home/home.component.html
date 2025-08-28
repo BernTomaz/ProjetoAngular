@@ -1,70 +1,88 @@
-<!-- Page Content -->
-<header class="py-5 mb-5 bg-angular">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center">
-        <div class="col-lg-2">
-          <img src="https://angular.io/assets/images/logos/angular/angular.svg" />
-        </div>
-        <div class="col-lg-10">
-          <h1 class="display-4 text-white mt-5 mb-2">Desenvolvimento SPA com Angular</h1>            
-        </div>
-      </div>
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- NAVBAR SUPERIOR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container navbar-brand">     
     </div>
-  </header>
+  </nav>
 
-  <div class="container main-container">
-    <div class="row text-center">
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="https://images.unsplash.com/photo-1518770660439-4636190af475" height="164px" width="253px" alt="" />
-          <div class="card-body">
-            <h4 class="card-title">Multiplataforma</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente ess</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn bg-angular text-white">Saiba mais</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" height="164px" width="253px" alt="" />
-          <div class="card-body">
-            <h4 class="card-title">Performance</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn bg-angular text-white">Saiba mais</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34" height="164px" width="253px" alt="Produtividade" />
-          <div class="card-body">
-            <h4 class="card-title">Produtividade</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn bg-angular text-white">Saiba mais</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=300&h=200" height="164px" width="253px" alt="Funcionalidades" />
-
-          <div class="card-body">
-            <h4 class="card-title">Funcionalidades</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn bg-angular text-white">Saiba mais</a>
-          </div>
-        </div>
-      </div>
+  <!-- HEADER (usa sua classe bg-angular de gradiente) -->
+<header class="py-5 bg-angular">
+  <div class="container-fluid ps-4">
+    <div class="d-flex align-items-center gap-2">
+      <img class="img-fluid" style="max-width:50px" src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Angular">
+      <h1 class="text-white mb-0">Desenvolvimento SPA com Angular</h1>
     </div>
   </div>
+</header>
+  <!-- CONTEÚDO -->
+  <main class="flex-grow-1 mt-4">
+    <div class="container mt-4 mb-5">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 text-center">
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="ratio ratio-16x9">
+              <img class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Multiplataforma">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-2">Multiplataforma</h5>
+              <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente ess</p>
+            </div>
+            <div class="card-footer bg-white border-0">
+              <a href="#" class="btn bg-angular text-white w-100">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="ratio ratio-16x9">
+              <img class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="Performance">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-2">Performance</h5>
+              <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni</p>
+            </div>
+            <div class="card-footer bg-white border-0">
+              <a href="#" class="btn bg-angular text-white w-100">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="ratio ratio-16x9">
+              <img class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1527689368864-3a821dbccc34" alt="Produtividade">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-2">Produtividade</h5>
+              <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse</p>
+            </div>
+            <div class="card-footer bg-white border-0">
+              <a href="#" class="btn bg-angular text-white w-100">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="ratio ratio-16x9">
+              <img class="w-100 h-100 object-fit-cover" src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=300&h=200" alt="Funcionalidades">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title mb-2">Funcionalidades</h5>
+              <p class="card-text mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni</p>
+            </div>
+            <div class="card-footer bg-white border-0">
+              <a href="#" class="btn bg-angular text-white w-100">Saiba mais</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+
+</body>
