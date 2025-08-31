@@ -6,7 +6,7 @@ import { AppComponent } from './app/app.component';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideHttpClient(),           // ✅ necessário para o ProdutosService
+    provideHttpClient(),           // necessário para o ProdutosService
     provideRouter(routes),
   ],
 });

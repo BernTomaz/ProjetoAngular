@@ -3,8 +3,8 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contato',
-  standalone: true, // ✅ Precisa disso porque você não está usando NgModule
+  standalone: true, 
   templateUrl: './contato.component.html',
-  imports: [RouterModule] // ✅ Importa o RouterModule para usar as rotas
+  imports: [RouterModule] 
 })
 export class ContatoComponent { }

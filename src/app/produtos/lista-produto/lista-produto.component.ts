@@ -9,8 +9,8 @@ registerLocaleData(localePt);
 
 @Component({
   selector: 'app-lista-produto',
-  standalone: true,                                     // ✅ standalone
-  imports: [CommonModule],                              // ✅ habilita *ngFor e currency
+  standalone: true,                                     
+  imports: [CommonModule],                              
   templateUrl: './lista-produto.component.html',
 })
 export class ListaProdutoComponent implements OnInit {

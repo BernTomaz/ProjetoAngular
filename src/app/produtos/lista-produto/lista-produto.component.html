@@ -6,7 +6,7 @@
     >
       <div class="card h-100 shadow-sm border-0">
         
-        <!-- Imagem do produto -->
+        
         <img
           [src]="'assets/produtos/' + produto.imagem"
           class="card-img-top img-fluid"
@@ -15,10 +15,10 @@
         />
 
         <div  class="card-body text-center">
-          <!-- Nome -->
+          
           <h4 class="card-title mb-2">{{ produto.nome | titlecase}}</h4>
 
-          <!-- Texto fixo -->
+          
         
           <div [ngSwitch]="produto.promocao">
             <p *ngSwitchCase="true">Em promoção!</p>
@@ -26,7 +26,7 @@
           </div>
 
            <div *ngIf="produto.promocao">
-          <!-- Preço normal ou promocional -->
+          
           <h4 class="fw-bold mb-0">
             <small><del> {{ produto.valor | currency:'BRL':true:'1.2-2':'pt-BR' }}</del></small>
             Por: {{ produto.valorPromo  | currency:'BRL':true:'1.2-2':'pt-BR' }}
@@ -35,7 +35,7 @@
 
 
           <div *ngIf="!produto.promocao">
-          <!-- Preço normal ou promocional -->
+          
           <h4 class="fw-bold mb-0">
             {{  produto.valor | currency:'BRL':true:'1.2-2':'pt-BR' }}
           </h4>
@@ -46,7 +46,7 @@
 
          </div>
 
-        <!-- Botão -->
+        
         <div class="card-footer bg-light border-0 text-center">
           <button class="btn btn-primary">
             <span class="fa fa-shopping-cart me-1"></span>

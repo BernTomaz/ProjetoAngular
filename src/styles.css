@@ -1,9 +1,9 @@
-/* styles.css */
+
 .main-container {
-  /* se a navbar for fixa, use ~70–80px; senão, pode ser menor */
-  padding: 80px 15px 40px;  /* topo | laterais | bottom */
+  
+  padding: 80px 15px 40px;  
   margin: 0 auto;
-  /* overflow: hidden;  <- evite, pode cortar sombras/menus */
+ 
 }
 
 footer {

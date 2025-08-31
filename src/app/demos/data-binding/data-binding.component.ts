@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router'; // ✅ Importa o RouterModule para usar as rotas
-import { FormsModule } from '@angular/forms'; // ✅ Importa o FormsModule
+import { RouterModule } from '@angular/router'; //  Importa o RouterModule para usar as rotas
+import { FormsModule } from '@angular/forms'; // Importa o FormsModule
 import { CommonModule } from '@angular/common'
 
 
@@ -9,9 +9,9 @@ import { CommonModule } from '@angular/common'
   standalone: true,
   templateUrl: './data-binding.component.html',
   imports: [
-    RouterModule, // ✅ Adiciona o RouterModule às importações do componente
-     FormsModule, // ✅ Adiciona o FormsModule às importações do componente
-     CommonModule // ✅ Adiciona o CommonModule às importações do componente
+    RouterModule, //  Adiciona o RouterModule às importações do componente
+     FormsModule, //  Adiciona o FormsModule às importações do componente
+     CommonModule //  Adiciona o CommonModule às importações do componente
      ] 
   
 })
