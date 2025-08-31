@@ -39,12 +39,13 @@
         <br>
         <br>
         <p>Nome: {{ nome }}</p> -->
-
-        <input type="text" [(ngModel)]="nome"  placeholder="Digite seu nome" ><br>
+        <div class="py-5">  
+          <input type="text" [(ngModel)]="nome"  placeholder="Digite seu nome" >
         <br>
         <br>
         <label [ngClass]="nome"> Seu nome é: {{nome}}</label> 
 
+      </div>
       </li>
     </ul>
   </div>
