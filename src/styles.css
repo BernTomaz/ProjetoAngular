@@ -15,3 +15,9 @@ footer {
   background: linear-gradient(135deg, #1a1a1a, #6a008a, #ff004c);
   color: white;
 }
+
+input,
+select,
+textarea {
+  max-width: 600px;
+}
