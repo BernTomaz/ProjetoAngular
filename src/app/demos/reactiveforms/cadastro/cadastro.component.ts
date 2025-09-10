@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormControl, FormGroup, FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule } from '@angular/forms';
 import { RouterModule  } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -22,17 +22,17 @@ export class CadastroComponent implements OnInit {
   cadastroForm: FormGroup;
   
 
-  constructor() {}
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(){
 
-   this.cadastroForm = new FormGroup({
-   nome: new FormControl(''),
-   cpf: new FormControl(''),
-   email: new FormControl(''),
-   senha: new FormControl(''),
-    senhaConfirmacao: new FormControl('')
-});
+  this.cadastroForm = this.fb.group({
+    nome: [''],
+    cpf: [''],
+    email: [''],
+    senha: [''],
+    senhaConfirmacao: ['']
+  });
   }
 
   adicionarUsuario(){
