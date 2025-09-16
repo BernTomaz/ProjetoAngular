@@ -28,9 +28,13 @@
         id="cpf"
         type="text"
         placeholder="CPF (requerido)"
-        formControlName="cpf"/>        
+        formControlName="cpf"
+        mask="000.000.000-00"/>
+
     </div>
   </div>
+
+  
 
   <!-- Email -->
   <div class="form-group">
@@ -61,6 +65,8 @@
         placeholder="Senha (requerido)"
         formControlName="senha"
       />
+      <span class="text-danger" *ngIf="cadastroForm.get('senha').errors?.['minlength'] && (cadastroForm.get('senha').dirty || cadastroForm.get('senha').touched)">A senha deve ter no mínimo 6 caracteres</span>
+      <span class="text-danger" *ngIf="cadastroForm.get('senha').errors?.['maxlength'] && (cadastroForm.get('senha').dirty || cadastroForm.get('senha').touched)">A senha deve ter no máximo 15 caracteres</span>
     </div>
   </div>
 
@@ -75,6 +81,8 @@
         placeholder="Confirme a senha (requerido)"
         formControlName="senhaConfirmacao"
       />
+      <span class="text-danger" *ngIf="cadastroForm.get('senhaConfirmacao').errors?.['minlength'] && (cadastroForm.get('senhaConfirmacao').dirty || cadastroForm.get('senhaConfirmacao').touched)">A confirmação de senha deve ter no mínimo 6 caracteres</span>
+      <span class="text-danger" *ngIf="cadastroForm.get('senhaConfirmacao').errors?.['maxlength'] && (cadastroForm.get('senhaConfirmacao').dirty || cadastroForm.get('senhaConfirmacao').touched)">A confirmação de senha deve ter no máximo 15 caracteres</span>
     </div>
   </div>
 
