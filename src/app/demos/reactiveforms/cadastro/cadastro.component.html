@@ -5,86 +5,95 @@
   <form novalidate (ngSubmit)="adicionarUsuario()" [formGroup]="cadastroForm" class="form-horizontal">
 
   <!-- Nome -->
-  <div class="form-group">
-    <label class="col-md-2 control-label mt-2" for="nome">Nome Completo</label>
-    <div class="col-md-10">
-      <input
-        class="form-control"
-        id="nome"
-        type="text"
-        placeholder="Nome (requerido)"
-        formControlName="nome"
-        [ngClass]="{'is-invalid': cadastroForm.get('nome').errors?.['required'] && (cadastroForm.get('nome').dirty || cadastroForm.get('nome').touched)}"/>
-      <span class="text-danger" *ngIf="cadastroForm.get('nome').errors?.['required'] && (cadastroForm.get('nome').dirty || cadastroForm.get('nome').touched)">Preencha o campo nome</span>
+<div class="form-group">
+  <label class="col-md-2 control-label mt-2" for="nome">Nome Completo</label>
+  <div class="col-md-10">
+    <input
+      class="form-control"
+      id="nome"
+      type="text"
+      placeholder="Nome (requerido)"
+      formControlName="nome"
+      [ngClass]="{'is-invalid': displayMessage['nome']}"/>
+
+    <div class="text-danger" *ngIf="displayMessage['nome']">
+      <small>{{ displayMessage['nome'] }}</small>
     </div>
   </div>
+</div>
 
-  <!-- CPF -->
-  <div class="form-group">
-    <label class="col-md-2 control-label mt-2" for="cpf">CPF</label>
-    <div class="col-md-10">
-      <input
-        class="form-control"
-        id="cpf"
-        type="text"
-        placeholder="CPF (requerido)"
-        formControlName="cpf"
-        mask="000.000.000-00"/>
+<!-- CPF -->
+<div class="form-group">
+  <label class="col-md-2 control-label mt-2" for="cpf">CPF</label>
+  <div class="col-md-10">
+    <input
+      class="form-control"
+      id="cpf"
+      type="text"
+      placeholder="CPF (requerido)"
+      formControlName="cpf"
+      mask="000.000.000-00"
+      [ngClass]="{'is-invalid': displayMessage['cpf']}"/>
 
+    <div class="text-danger" *ngIf="displayMessage['cpf']">
+      <small>{{ displayMessage['cpf'] }}</small>
     </div>
   </div>
+</div>
 
-  
+<!-- Email -->
+<div class="form-group">
+  <label class="col-md-2 control-label mt-2" for="email">E-mail</label>
+  <div class="col-md-10">
+    <input
+      class="form-control"
+      id="email"
+      type="email"
+      placeholder="E-mail (requerido)"
+      formControlName="email"
+      [ngClass]="{'is-invalid': displayMessage['email']}" />
 
-  <!-- Email -->
-  <div class="form-group">
-    <label class="col-md-2 control-label mt-2" for="email">E-mail</label>
-    <div class="col-md-10">
-      <input
-        class="form-control"
-        id="email"
-        type="email"
-        placeholder="E-mail (requerido)"
-        formControlName="email"[ngClass]="{'is-invalid': cadastroForm.get('email').errors && (cadastroForm.get('email').dirty || cadastroForm.get('email').touched)}"/>
-           
-
-      <span class="text-danger" *ngIf="cadastroForm.get('email')?.errors?.['required'] && (cadastroForm.get('email').dirty || cadastroForm.get('email').touched)"><p>Preencha o campo email</p></span>
-      <span class="text-danger" *ngIf="cadastroForm.get('email')?.errors?.['email'] && (cadastroForm.get('email').dirty || cadastroForm.get('email').touched)"><p>Email em formato inválido</p></span>
-
+    <div class="text-danger" *ngIf="displayMessage['email']">
+      <small>{{ displayMessage['email'] }}</small>
     </div>
   </div>
+</div>
 
-  <!-- Senha -->
-  <div class="form-group">
-    <label class="col-md-2 control-label mt-2" for="senha">Senha</label>
-    <div class="col-md-10">
-      <input
-        class="form-control"
-        id="senha"
-        type="password"
-        placeholder="Senha (requerido)"
-        formControlName="senha"
-      />
-      <span class="text-danger" *ngIf="cadastroForm.get('senha').errors?.['minlength'] && (cadastroForm.get('senha').dirty || cadastroForm.get('senha').touched)">A senha deve ter no mínimo 6 caracteres</span>
-      <span class="text-danger" *ngIf="cadastroForm.get('senha').errors?.['maxlength'] && (cadastroForm.get('senha').dirty || cadastroForm.get('senha').touched)">A senha deve ter no máximo 15 caracteres</span>
+<!-- Senha -->
+<div class="form-group">
+  <label class="col-md-2 control-label mt-2" for="senha">Senha</label>
+  <div class="col-md-10">
+    <input
+      class="form-control"
+      id="senha"
+      type="password"
+      placeholder="Senha (requerido)"
+      formControlName="senha"
+      [ngClass]="{'is-invalid': displayMessage['senha']}"/>
+
+    <div class="text-danger" *ngIf="displayMessage['senha']">
+      <small>{{ displayMessage['senha'] }}</small>
     </div>
   </div>
+</div>
 
-  <!-- Confirmação de Senha -->
-  <div class="form-group">
-    <label class="col-md-2 control-label mt-2" for="senhaConfirmacao">Confirme a Senha</label>
-    <div class="col-md-10">
-      <input
-        class="form-control"
-        id="senhaConfirmacao"
-        type="password"
-        placeholder="Confirme a senha (requerido)"
-        formControlName="senhaConfirmacao"
-      />
-      <span class="text-danger" *ngIf="cadastroForm.get('senhaConfirmacao').errors?.['minlength'] && (cadastroForm.get('senhaConfirmacao').dirty || cadastroForm.get('senhaConfirmacao').touched)">A confirmação de senha deve ter no mínimo 6 caracteres</span>
-      <span class="text-danger" *ngIf="cadastroForm.get('senhaConfirmacao').errors?.['maxlength'] && (cadastroForm.get('senhaConfirmacao').dirty || cadastroForm.get('senhaConfirmacao').touched)">A confirmação de senha deve ter no máximo 15 caracteres</span>
+<!-- Confirmação de Senha -->
+<div class="form-group">
+  <label class="col-md-2 control-label mt-2" for="senhaConfirmacao">Confirme a Senha</label>
+  <div class="col-md-10">
+    <input
+      class="form-control"
+      id="senhaConfirmacao"
+      type="password"
+      placeholder="Confirme a senha (requerido)"
+      formControlName="senhaConfirmacao"
+      [ngClass]="{'is-invalid': displayMessage['senhaConfirmacao']}"/>
+
+    <div class="text-danger" *ngIf="displayMessage['senhaConfirmacao']">
+      <small>{{ displayMessage['senhaConfirmacao'] }}</small>
     </div>
   </div>
+</div>
 
   <!-- Botão -->
   <div class="form-group mt-3">
