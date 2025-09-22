@@ -5,6 +5,6 @@ import { RouterModule } from '@angular/router';
   selector: 'app-contato',
   standalone: true, 
   templateUrl: './contato.component.html',
-  imports: [RouterModule] 
+  
 })
 export class ContatoComponent { }
