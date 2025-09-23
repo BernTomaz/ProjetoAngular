@@ -14,4 +14,6 @@ export const routes: Routes = [
     { path: 'data-binding', component: DataBindingComponent }, //  Quando acessar '/data-binding', carrega DataBindingComponent
     { path: 'produtos', component: ListaProdutoComponent }, //  Quando acessar '/produtos', carrega ListaProdutoComponent
     { path: 'cadastro', component: CadastroComponent }, //  Quando acessar '/cadastro', carrega CadastroComponent
+    { path: 'produtos-dashboard', loadChildren: () => import('./demos/arquitetura-componentes/produto-dashboard/produto.module')
+        .then(m => m.ProdutoModule)} // Carrega o módulo de produtos de forma preguiçosa (lazy loading)
 ];
