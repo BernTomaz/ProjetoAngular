@@ -29,7 +29,7 @@ jobs:
         run: |
           cd wiki
 
-          # Criar arquivo de metadata (capa)
+          # Criar metadata (capa do manual)
           cat <<EOF > meta.yaml
           title: "📘 Manual do ProjetoAngular"
           subtitle: "Documentação Técnica da Wiki"
@@ -37,15 +37,15 @@ jobs:
           date: "`date +%Y`"
           EOF
 
-          # Gerar PDF respeitando a ordem da Wiki e com sumário em página separada
+          # Gerar PDF com ordem definida, sumário e destaque de código
           pandoc Home.md Instalacao.md Estrutura-do-Projeto.md Guia-de-Desenvolvimento.md API-e-Integracao.md Deploy.md Contribuicao.md FAQ.md \
             -o ../Manual-ProjetoAngular.pdf \
             --from markdown \
             --pdf-engine=xelatex \
             --metadata-file=meta.yaml \
-            --toc --toc-depth=2 \
+            --toc --toc-depth=2 --top-level-division=chapter \
+            --highlight-style tango \
             -V toc-title="📑 Sumário" \
-            -V toc-own-page=true \
             -V geometry:margin=2.5cm \
             -V fontsize=12pt \
             -V mainfont="DejaVu Serif" \
