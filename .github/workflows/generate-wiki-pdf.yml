@@ -1,0 +1,34 @@
+name: 📘 Gerar Manual da Wiki em PDF
+
+on:
+  workflow_dispatch:   # permite rodar manualmente
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🔄 Clonar repositório principal
+        uses: actions/checkout@v3
+
+      - name: 📥 Clonar Wiki
+        run: git clone https://github.com/${{ github.repository }}.wiki.git wiki
+
+      - name: ⚙️ Instalar Pandoc e LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex
+
+      - name: 📝 Gerar PDF da Wiki
+        run: |
+          cd wiki
+          pandoc *.md -o ../Manual-ProjetoAngular.pdf
+
+      - name: 📤 Upload PDF como artefato
+        uses: actions/upload-artifact@v3
+        with:
+          name: Manual-ProjetoAngular
+          path: Manual-ProjetoAngular.pdf
