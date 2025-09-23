@@ -38,7 +38,8 @@ jobs:
           EOF
 
           # Gerar PDF com sumário e capa
-          pandoc *.md -o ../Manual-ProjetoAngular.pdf \
+           pandoc Home.md Instalacao.md Estrutura-do-Projeto.md Guia-de-Desenvolvimento.md API-e-Integracao.md Deploy.md Contribuicao.md FAQ.md \
+            -o ../Manual-ProjetoAngular.pdf \
             --from markdown \
             --pdf-engine=xelatex \
             --metadata-file=meta.yaml \
