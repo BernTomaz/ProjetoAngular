@@ -40,8 +40,7 @@ jobs:
           -o ../Manual-ProjetoAngular.pdf \
           --from markdown \
           --pdf-engine=xelatex \
-          --metadata-file=meta.yaml \
-          --toc --toc-depth=2 --top-level-division=chapter \
+          --metadata-file=meta.yaml \          
           --highlight-style tango \
           -V toc-title="Sumário" \
           -V geometry:margin=2.5cm \
