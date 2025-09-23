@@ -31,25 +31,23 @@ jobs:
 
           # Criar metadata (capa do manual)
           cat <<EOF > meta.yaml
-          title: "📘 Manual do ProjetoAngular"
-          subtitle: "Documentação Técnica da Wiki"
-          author: "BernTomaz"
-          date: "`date +%Y`"
+          title: "Manual do ProjetoAngular"
+          author: "Bernardo Tomaz"          
           EOF
 
           # Gerar PDF com ordem definida, sumário e destaque de código
-          pandoc Home.md Instalacao.md Estrutura-do-Projeto.md Guia-de-Desenvolvimento.md API-e-Integracao.md Deploy.md Contribuicao.md FAQ.md \
-            -o ../Manual-ProjetoAngular.pdf \
-            --from markdown \
-            --pdf-engine=xelatex \
-            --metadata-file=meta.yaml \
-            --toc --toc-depth=2 --top-level-division=chapter \
-            --highlight-style tango \
-            -V toc-title="📑 Sumário" \
-            -V geometry:margin=2.5cm \
-            -V fontsize=12pt \
-            -V mainfont="DejaVu Serif" \
-            -V monofont="DejaVu Sans Mono"
+           pandoc Home.md Instalacao.md Estrutura-do-Projeto.md Guia-de-Desenvolvimento.md API-e-Integracao.md Deploy.md Contribuicao.md FAQ.md \
+          -o ../Manual-ProjetoAngular.pdf \
+          --from markdown \
+          --pdf-engine=xelatex \
+          --metadata-file=meta.yaml \
+          --toc --toc-depth=2 --top-level-division=chapter \
+          --highlight-style tango \
+          -V toc-title="Sumário" \
+          -V geometry:margin=2.5cm \
+          -V fontsize=12pt \
+          -V mainfont="DejaVu Serif" \
+          -V monofont="DejaVu Sans Mono"
 
       - name: 📤 Upload PDF como artefato
         uses: actions/upload-artifact@v4
