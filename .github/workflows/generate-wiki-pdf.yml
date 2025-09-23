@@ -1,7 +1,7 @@
 name: 📘 Gerar Manual da Wiki em PDF
 
 on:
-  workflow_dispatch:   # permite rodar manualmente
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -25,11 +25,29 @@ jobs:
             texlive-fonts-recommended \
             texlive-plain-generic
 
-      - name: 📝 Gerar PDF da Wiki
+      - name: 📝 Gerar PDF da Wiki com capa estilizada
         run: |
           cd wiki
-          pandoc *.md -o ../Manual-ProjetoAngular.pdf --pdf-engine=xelatex --toc --toc-depth=2
 
+          # Criar arquivo de metadata (capa)
+          cat <<EOF > meta.yaml
+          title: "📘 Manual do ProjetoAngular"
+          subtitle: "Documentação Técnica da Wiki"
+          author: "BernTomaz"
+          date: "`date +%Y`"
+          EOF
+
+          # Gerar PDF com sumário e capa
+          pandoc *.md -o ../Manual-ProjetoAngular.pdf \
+            --from markdown \
+            --pdf-engine=xelatex \
+            --metadata-file=meta.yaml \
+            --toc --toc-depth=2 \
+            -V geometry:margin=2.5cm \
+            -V fontsize=12pt \
+            -V mainfont="DejaVu Serif" \
+            -V monofont="DejaVu Sans Mono"
+      
       - name: 📤 Upload PDF como artefato
         uses: actions/upload-artifact@v4
         with:
