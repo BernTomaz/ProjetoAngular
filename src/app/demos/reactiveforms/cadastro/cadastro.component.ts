@@ -37,6 +37,7 @@ export class CadastroComponent implements OnInit, AfterViewInit {
   validationMessages: ValidationMessages;
   genericValidator: GenericValidator;
   displayMessage: DisplayMessage = {};
+
   
   constructor(private fb: FormBuilder) {
     this.validationMessages = {
@@ -122,13 +123,14 @@ export class CadastroComponent implements OnInit, AfterViewInit {
 }
 
 
-  adicionarUsuario(){
+  adicionarUsuario(){   
     if(this.cadastroForm.dirty && this.cadastroForm.valid){
         this.usuario = Object.assign({}, this.usuario, this.cadastroForm.value);
-        this.formResult = JSON.stringify(this.cadastroForm.value);
+        this.formResult = JSON.stringify(this.cadastroForm.value);        
     }
     else{
-      this.formResult = "Formulário inválido";
+       this.formResult = "Formulário inválido";
+      console.log('Formulário inválido');
      }
    }
 }

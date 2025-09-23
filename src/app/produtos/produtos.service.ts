@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Produto } from './produto';   //  importa do produto.ts
 
 @Injectable({ providedIn: 'root' })
-export class ProdutosService {
+export class ProdutosService {  
   private apiUrl = '/api/produtos'; 
 
   constructor(private http: HttpClient) {}
