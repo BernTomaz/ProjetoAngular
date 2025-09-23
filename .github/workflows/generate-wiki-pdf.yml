@@ -20,12 +20,16 @@ jobs:
       - name: ⚙️ Instalar Pandoc e LaTeX
         run: |
           sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex
+          sudo apt-get install -y pandoc \
+            texlive-xetex \
+            texlive-fonts-recommended \
+            texlive-plain-generic
 
       - name: 📝 Gerar PDF da Wiki
         run: |
           cd wiki
-          pandoc *.md -o ../Manual-ProjetoAngular.pdf
+          # junta todos os arquivos markdown em um PDF
+          pandoc *.md -o ../Manual-ProjetoAngular.pdf --pdf-engine=xelatex --toc --toc-depth=2
 
       - name: 📤 Upload PDF como artefato
         uses: actions/upload-artifact@v3
