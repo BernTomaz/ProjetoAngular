@@ -1,8 +1,10 @@
-export interface Produto {
-    id: string ;
-    nome: string ;
-    valor: number;
-    promocao: boolean;
-    valorPromo: number;
-    imagem: string;
+export interface Produtos {
+  id: number;
+  nome: string;
+  descricao: string;
+  imagem: string;
+  ativo: boolean;
+  valor: number;
+  promocao: boolean;
+  valorPromo: number;
 }

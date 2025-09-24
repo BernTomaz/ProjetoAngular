@@ -1,0 +1,65 @@
+<div class="card h-100 shadow-sm border-0">
+
+  <!-- Imagem -->
+  <img
+    [src]="'assets/produtos/' + produto.imagem"
+    class="card-img-top img-fluid p-3"
+    [alt]="produto.nome"
+    style="max-height: 180px; object-fit: contain;"
+  />
+
+  <!-- Conteúdo -->
+  <div class="card-body text-center">
+    <h5 class="card-title fw-semibold mb-2">
+      {{ produto.nome | titlecase }}
+    </h5>
+
+    <!-- Descrição -->
+    <p class="text-muted small mb-2">
+      {{ produto.descricao }}
+    </p>
+
+    <!-- Se em estoque -->
+    <ng-container *ngIf="produto.ativo; else foraEstoque">
+      
+      <!-- Promoção -->
+      <ng-container *ngIf="produto.promocao; else precoNormal">
+        <p class="text-danger fw-bold">Em promoção!</p>
+        <h5 class="fw-bold mb-0">
+          <small class="text-muted">
+            <del>
+              {{ produto.valor | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+            </del>
+          </small>
+          <br />
+          <span class="text-success">
+            {{ produto.valorPromo | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+          </span>
+        </h5>
+      </ng-container>
+
+      <!-- Preço normal -->
+      <ng-template #precoNormal>
+        <p class="text-secondary">Por apenas:</p>
+        <h5 class="fw-bold mb-0">
+          {{ produto.valor | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}
+        </h5>
+      </ng-template>
+
+    </ng-container>
+
+    <!-- Se fora de estoque -->
+    <ng-template #foraEstoque>
+      <p class="text-danger fw-bold mb-2">Fora de estoque</p>
+      <p class="text-muted small">Avise-me quando chegar</p>
+    </ng-template>
+  </div>
+
+  <!-- Rodapé -->
+  <div class="card-footer bg-light border-0 text-center">
+    <button class="btn btn-primary" [disabled]="!produto.ativo">
+      <i class="fa fa-shopping-cart me-1"></i>
+      Comprar
+    </button>
+  </div>
+</div>

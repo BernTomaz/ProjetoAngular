@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';       
 import { ProdutosService } from '../produtos.service';
-import { Produto } from '../produto';
+import { Produtos } from '../produto';
 import { registerLocaleData } from '@angular/common';
 
 import localePt from '@angular/common/locales/pt';
@@ -14,7 +14,7 @@ registerLocaleData(localePt);
   templateUrl: './lista-produto.component.html',
 })
 export class ListaProdutoComponent implements OnInit {
-  produtos: Produto[] = [];
+  produtos: Produtos[] = [];
 
   constructor(private produtosSrv: ProdutosService) {}
 
@@ -22,5 +22,5 @@ export class ListaProdutoComponent implements OnInit {
     this.produtosSrv.listar().subscribe((data) => (this.produtos = data));
   }
 
-  trackById = (_: number, p: Produto) => p.id;
+  trackById = (_: number, p: Produtos) => p.id;
 }
