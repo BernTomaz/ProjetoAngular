@@ -56,10 +56,13 @@
   </div>
 
   <!-- Rodapé -->
-  <div class="card-footer bg-light border-0 text-center">
-    <button class="btn btn-primary" [disabled]="!produto.ativo">
-      <i class="fa fa-shopping-cart me-1"></i>
-      Comprar
-    </button>
-  </div>
+<div class="card-footer bg-light border-0 text-center">
+  <button 
+    class="btn d-inline-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow-sm fw-semibold"
+    [ngClass]="produto.ativo ? 'btn-success' : 'btn-danger'" 
+    (click)="emitirEvento()">
+    <span [ngClass]="produto.ativo ? 'fa fa-toggle-on' : 'fa fa-toggle-off'"></span>
+    Status -
+    {{ produto.ativo ? 'Ativo' : 'Inativo' }} 
+  </button>
 </div>

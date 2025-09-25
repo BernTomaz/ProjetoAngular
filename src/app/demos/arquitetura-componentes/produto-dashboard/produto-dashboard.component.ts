@@ -26,4 +26,9 @@ export class ProdutoDashboardComponent implements OnInit {
       { id: 7, nome: 'Webcam', descricao: 'Webcam Full HD com microfone integrado.', imagem: 'webcam.jpg', ativo: true, valor: 180, promocao: true, valorPromo: 150 }
     ];
   }
+
+  atualizarStatus(event: Produtos) {
+    event.ativo = !event.ativo;
+  }
+  
 }

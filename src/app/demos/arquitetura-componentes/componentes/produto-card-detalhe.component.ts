@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Produtos } from '../../../produtos/produto'; 
 
@@ -11,4 +11,15 @@ import { Produtos } from '../../../produtos/produto';
 })
 export class ProdutoCardDetalheComponent {
   @Input() produto: Produtos;   
+
+  @Output()
+  status: EventEmitter<Produtos> = new EventEmitter<Produtos>();
+
+
+  emitirEvento() {
+    console.log('Evento emitido para o produto:', this.produto);
+    this.status.emit(this.produto);
+  }
+
 }
+
