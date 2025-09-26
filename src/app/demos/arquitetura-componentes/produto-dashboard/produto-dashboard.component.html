@@ -6,8 +6,14 @@
 
 
   <div class="row text-center">
-    <div class="col-md-4" *ngFor="let produto of produtos" style="padding-bottom: 30px;">
-      <app-produto-card-detalhe [produto]="produto" (status)="atualizarStatus($event)"></app-produto-card-detalhe>
+    <div class="col-md-4" 
+    *ngFor="let produto of produtos" 
+    style="padding-bottom: 30px;">
+      <app-produto-card-detalhe [produto]="produto" (status)="atualizarStatus($event)">      
+        <h5 class="acabou">Vá em uma de nossas lojas</h5>
+        <h6 class="decisao">ou</h6>
+        <button class="notificarMe btn btn-sm btn-outline-primary" (click)="notificarUsuario(produto)">Notificar-me</button>
+      </app-produto-card-detalhe>
     </div>
   </div>
 </div>

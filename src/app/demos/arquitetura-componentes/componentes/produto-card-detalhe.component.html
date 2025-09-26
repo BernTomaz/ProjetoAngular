@@ -50,11 +50,13 @@
 
     <!-- Se fora de estoque -->
     <ng-template #foraEstoque>
-      <p class="text-danger fw-bold mb-2">Fora de estoque</p>
-      <p class="text-muted small">Avise-me quando chegar</p>
+      <p class="text-danger fw-bold mb-2">Fora de estoque</p>      
+      <ng-content select=".acabou"></ng-content>
+      <ng-content select=".decisao"></ng-content>
+      <ng-content select=".notificarMe"></ng-content>
     </ng-template>
   </div>
-
+  
   <!-- Rodapé -->
 <div class="card-footer bg-light border-0 text-center">
   <button 
@@ -62,7 +64,6 @@
     [ngClass]="produto.ativo ? 'btn-success' : 'btn-danger'" 
     (click)="emitirEvento()">
     <span [ngClass]="produto.ativo ? 'fa fa-toggle-on' : 'fa fa-toggle-off'"></span>
-    Status -
-    {{ produto.ativo ? 'Ativo' : 'Inativo' }} 
+    <h5>Status - {{ produto.ativo ? 'Ativo' : 'Inativo' }}</h5>
   </button>
 </div>

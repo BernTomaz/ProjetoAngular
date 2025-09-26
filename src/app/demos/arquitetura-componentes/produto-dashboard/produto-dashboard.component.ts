@@ -31,4 +31,9 @@ export class ProdutoDashboardComponent implements OnInit {
     event.ativo = !event.ativo;
   }
   
+  notificarUsuario(produto: Produtos) {
+  alert(`Avisaremos assim que o produto "${produto.nome}" chegar!`);
+}
+
+
 }
