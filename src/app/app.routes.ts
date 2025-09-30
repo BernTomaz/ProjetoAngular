@@ -5,6 +5,7 @@ import { SobreComponent } from './institucional/sobre/sobre.component'; //  Impo
 import { DataBindingComponent } from './demos/data-binding/data-binding.component'; //  Importa o componente de data binding
 import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component'; //  Importa o componente de lista de produtos
 import { CadastroComponent } from './demos/reactiveforms/cadastro/cadastro.component'; //  Importa o componente de cadastro
+import { NotFoundComponent } from './navegacao/not-found/not-found.component'; // Importa o componente NotFound
 
 export const routes: Routes = [
     { path: '', component: HomeComponent }, //  Quando o usuário acessar a raiz ('/'), o HomeComponent será carregado no <router-outlet>
@@ -15,5 +16,7 @@ export const routes: Routes = [
     { path: 'produtos', component: ListaProdutoComponent }, //  Quando acessar '/produtos', carrega ListaProdutoComponent
     { path: 'cadastro', component: CadastroComponent }, //  Quando acessar '/cadastro', carrega CadastroComponent
     { path: 'produtos-dashboard', loadChildren: () => import('./demos/arquitetura-componentes/produto-dashboard/produto.module')
-        .then(m => m.ProdutoModule)} // Carrega o módulo de produtos de forma preguiçosa (lazy loading)
+        .then(m => m.ProdutoModule)}, // Carrega o módulo de produtos de forma preguiçosa (lazy loading)
+
+   { path: '**', component: NotFoundComponent } //  Rota curinga para redirecionar para a página inicial em caso de rota inválida
 ];
