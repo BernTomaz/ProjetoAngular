@@ -1,10 +1,10 @@
-# 📘 Projeto Angular
+# Projeto Angular
 
 > Aplicação Angular gerada com **Angular CLI 19.2.5**. Inclui suporte a **proxy** para backend e **API fake** via `json-server` para desenvolvimento local.
 
 ---
 
-## 🚀 Requisitos
+## Requisitos
 
 - Node.js 18+ (recomendado LTS)
 - npm 9+ ou pnpm/yarn
@@ -16,7 +16,7 @@ npm i -g @angular/cli
 
 ---
 
-## 🧩 Scripts úteis
+## Scripts úteis
 
 ```bash
 # Instalar dependências
@@ -43,7 +43,7 @@ npm test          # ng test
 
 ---
 
-## 🔌 Proxy & Mock API (desenvolvimento)
+## Proxy & Mock API (desenvolvimento)
 
 - **Proxy**  
   Redirecione chamadas (ex.: `/api`) para um servidor local/externo sem problemas de CORS.  
@@ -64,7 +64,7 @@ npm test          # ng test
 
 ---
 
-## 🛠️ Desenvolvimento
+## Desenvolvimento
 
 1. Instalar dependências:
 
@@ -90,7 +90,7 @@ A aplicação recarrega automaticamente a cada alteração nos arquivos de `src/
 
 ---
 
-## 🗂️ Estrutura de pastas (resumo)
+## Estrutura de pastas (resumo)
 
 ```
 ProjetoAngular/
@@ -113,7 +113,7 @@ ProjetoAngular/
 
 ---
 
-## 🧱 Padrões e convenções
+## Padrões e convenções
 
 ### Arquitetura
 - Agrupar por **feature** (`src/app/features/<feature-name>`).
@@ -132,7 +132,7 @@ ProjetoAngular/
 
 ---
 
-## 🔐 Variáveis de ambiente
+## Variáveis de ambiente
 
 Use:
 
@@ -145,7 +145,7 @@ Em produção, forneça variáveis via pipeline (CI/CD) e substituições do `an
 
 ---
 
-## 🧪 Testes
+## Testes
 
 - **Unitários** com Karma/Jasmine:
 
@@ -158,7 +158,7 @@ Em produção, forneça variáveis via pipeline (CI/CD) e substituições do `an
 
 ---
 
-## 📦 Build & Deploy
+## Build & Deploy
 
 - **Build prod**:
 
@@ -174,7 +174,7 @@ Em produção, forneça variáveis via pipeline (CI/CD) e substituições do `an
 
 ---
 
-## 🧰 Troubleshooting
+## Troubleshooting
 
 - **CORS em dev**: rode com proxy (`npm start`) para evitar CORS.
 - **404 em refresh (SPA)**: configure rewrite de todas as rotas para `index.html`.
@@ -182,7 +182,7 @@ Em produção, forneça variáveis via pipeline (CI/CD) e substituições do `an
 
 ---
 
-## 📜 Licença
+## Licença
 Este projeto está sob a licença **MIT**. Sinta-se livre para utilizá-lo e contribuir!
 
 
